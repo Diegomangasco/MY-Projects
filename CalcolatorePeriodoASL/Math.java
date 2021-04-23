@@ -213,7 +213,7 @@ public class Math {
 	
 	public int creaFile(String nome) {
 		String nuovoNome = nome.replaceAll(" ", "_");
-		String path = "C:\\Users\\UTENTE\\Desktop\\";
+		String path = System.getProperty("user.home") + "\\Desktop\\";
 		File doc = new File(path + nuovoNome + ".doc");
 		try {
 			if(doc.createNewFile()) {
@@ -237,7 +237,7 @@ public class Math {
 					for(int i = 0; i<counterR; i++) {
 						w.write(Risca[i] + "\n");
 					}
-					w.write("\nTotale anzianità contributiva: " + anni + " anni, " + mesi + " mesi, " + giorni + " giorni");
+					w.write("\nTotale anzianitÃ  contributiva: " + anni + " anni, " + mesi + " mesi, " + giorni + " giorni");
 					w.close();
 				}catch(IOException e) {
 					e.printStackTrace();
@@ -246,7 +246,7 @@ public class Math {
 				return 1;
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "File già esistente");
+				JOptionPane.showMessageDialog(null, "File giÃ  esistente");
 				return 0;
 			}
 		} catch (IOException e) {
